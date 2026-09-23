@@ -7,47 +7,69 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0f172a; color: #f8fafc; line-height: 1.6; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #0b132b; color: #f8fafc; line-height: 1.6; }
         a { color: inherit; text-decoration: none; }
-        nav { position: fixed; top: 0; width: 100%; background: #0f172ae6; backdrop-filter: blur(8px); border-bottom: 1px solid #1e293b; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
-        .logo { font-weight: bold; font-size: 1.2rem; color: #f59e0b; }
+        
+        /* Navegación */
+        nav { position: fixed; top: 0; width: 100%; background: #0b132be6; backdrop-filter: blur(8px); border-bottom: 1px solid #1c2541; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; z-index: 100; }
+        .logo { font-weight: bold; font-size: 1.2rem; color: #38bdf8; }
         .nav-links a { margin-left: 1.5rem; font-size: 0.9rem; color: #cbd5e1; transition: 0.3s; }
-        .nav-links a:hover { color: #f59e0b; }
+        .nav-links a:hover { color: #38bdf8; }
+        
         .container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+        
+        /* Hero / Perfil */
         .hero { padding: 8rem 0 4rem 0; }
-        .badge { background: #f59e0b20; color: #f59e0b; border: 1px solid #f59e0b40; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
+        .badge { background: #38bdf820; color: #38bdf8; border: 1px solid #38bdf840; padding: 0.3rem 0.8rem; border-radius: 20px; font-size: 0.8rem; font-weight: bold; }
         h1 { font-size: 2.8rem; margin: 1rem 0; color: #fff; line-height: 1.2; }
-        h1 span { color: #f59e0b; }
+        h1 span { color: #38bdf8; }
         .hero p { color: #94a3b8; font-size: 1.1rem; margin-bottom: 2rem; max-width: 700px; }
-        .btn-group { display: flex; gap: 1rem; }
-        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-block; }
-        .btn-primary { background: #f59e0b; color: #0f172a; }
-        .btn-primary:hover { background: #d97706; }
-        .btn-secondary { background: #1e293b; color: #f8fafc; border: 1px solid #334155; }
-        .btn-secondary:hover { background: #334155; }
-        section { padding: 4rem 0; border-top: 1px solid #1e293b; }
+        
+        /* Botones */
+        .btn-group { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .btn { padding: 0.8rem 1.5rem; border-radius: 8px; font-weight: bold; cursor: pointer; transition: 0.3s; display: inline-flex; align-items: center; gap: 0.5rem; }
+        .btn-primary { background: #38bdf8; color: #0b132b; }
+        .btn-primary:hover { background: #0284c7; color: #fff; }
+        .btn-secondary { background: #1c2541; color: #f8fafc; border: 1px solid #3a506b; }
+        .btn-secondary:hover { background: #3a506b; }
+        
+        /* Secciones */
+        section { padding: 4rem 0; border-top: 1px solid #1c2541; }
         .section-title { font-size: 1.8rem; margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem; }
         .section-subtitle { color: #94a3b8; margin-bottom: 2.5rem; }
-        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
-        .card { background: #1e293b; border: 1px solid #334155; border-radius: 12px; padding: 1.5rem; }
-        .card h3 { margin-bottom: 1rem; color: #f59e0b; }
+        
+        /* Grilla de Habilidades */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+        .card { background: #1c2541; border: 1px solid #3a506b; border-radius: 12px; padding: 1.5rem; }
+        .card h3 { margin-bottom: 1rem; color: #38bdf8; font-size: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
         .card ul { list-style: none; }
-        .card li { margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.95rem; }
-        .card li i { color: #f59e0b; margin-right: 0.5rem; }
-        .project-card { background: #1e293b; border-radius: 12px; overflow: hidden; border: 1px solid #334155; margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 1fr; }
+        .card li { margin-bottom: 0.5rem; color: #cbd5e1; font-size: 0.95rem; display: flex; align-items: center; }
+        .card li i { color: #38bdf8; margin-right: 0.5rem; font-size: 0.85rem; }
+        
+        /* Proyectos */
+        .project-card { background: #1c2541; border-radius: 12px; overflow: hidden; border: 1px solid #3a506b; margin-bottom: 2rem; display: grid; grid-template-columns: 1fr 1fr; }
         @media (max-width: 768px) { .project-card { grid-template-columns: 1fr; } }
         .project-info { padding: 2rem; }
-        .project-iframe { background: #020617; min-height: 350px; }
+        .project-iframe { background: #0b132b; min-height: 350px; }
         .project-iframe iframe { width: 100%; height: 100%; border: 0; }
         .tech-stack { display: flex; gap: 0.5rem; margin-top: 1rem; flex-wrap: wrap; }
-        .tech-tag { background: #0f172a; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: #94a3b8; }
-        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; border-top: 1px solid #1e293b; }
+        .tech-tag { background: #0b132b; padding: 0.2rem 0.6rem; border-radius: 4px; font-size: 0.8rem; color: #94a3b8; border: 1px solid #3a506b; }
+        
+        /* Tarjetas de Contacto */
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
+        .contact-card { background: #1c2541; border: 1px solid #3a506b; border-radius: 12px; padding: 1.5rem; text-align: center; transition: transform 0.3s ease; }
+        .contact-card:hover { transform: translateY(-5px); border-color: #38bdf8; }
+        .contact-card i { font-size: 2rem; color: #38bdf8; margin-bottom: 0.8rem; }
+        .contact-card h4 { font-size: 1.1rem; color: #fff; margin-bottom: 0.3rem; }
+        .contact-card p { font-size: 0.9rem; color: #94a3b8; word-break: break-all; }
+        
+        footer { text-align: center; padding: 2rem; color: #64748b; font-size: 0.9rem; border-top: 1px solid #1c2541; }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">TU NOMBRE</div>
+        <div class="logo">PORTAFOLIO</div>
         <div class="nav-links">
             <a href="#perfil">Perfil</a>
             <a href="#skills">Habilidades</a>
@@ -57,21 +79,24 @@
     </nav>
 
     <div class="container">
+        <!-- SECCIÓN PERFIL / HERO -->
         <section id="perfil" class="hero">
             <span class="badge">BUSINESS ANALYST & DATA ANALYTICS</span>
-            <h1>Traduzco <span>necesidades de negocio</span> en soluciones con Power BI.</h1>
-            <p>Especialista en levantar requerimientos, comprender la lógica operativa de la empresa y modelar datos estratégicos para decisiones basadas en evidencia.</p>
+            <h1>Traduzco <span>necesidades de negocio</span> en soluciones con Power BI y Automatización.</h1>
+            <p>Especialista en levantar requerimientos, comprender la lógica operativa de la empresa, modelar datos estratégicos y automatizar flujos de trabajo para impulsar decisiones basadas en evidencia.</p>
             <div class="btn-group">
                 <a href="#proyectos" class="btn btn-primary"><i class="fas fa-chart-line"></i> Ver Proyectos</a>
-                <a href="mailto:tu-email@correo.com" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contacto</a>
+                <a href="#contacto" class="btn btn-secondary"><i class="fas fa-envelope"></i> Contacto</a>
             </div>
         </section>
 
+        <!-- SECCIÓN HABILIDADES -->
         <section id="skills">
-            <h2 class="section-title"><i class="fas fa-brain" style="color: #f59e0b;"></i> Competencias & Skills</h2>
-            <p class="section-subtitle">Combinación de habilidades funcionales de negocio y técnicas de análisis de datos.</p>
+            <h2 class="section-title"><i class="fas fa-brain" style="color: #38bdf8;"></i> Competencias & Skills</h2>
+            <p class="section-subtitle">Combinación de habilidades funcionales de negocio, análisis de datos y automatización de procesos.</p>
             
             <div class="skills-grid">
+                <!-- Tarjeta 1 -->
                 <div class="card">
                     <h3><i class="fas fa-briefcase"></i> Analista de Requerimientos</h3>
                     <ul>
@@ -81,6 +106,7 @@
                         <li><i class="fas fa-check"></i> Definición de KPIs clave de negocio</li>
                     </ul>
                 </div>
+                <!-- Tarjeta 2 -->
                 <div class="card">
                     <h3><i class="fas fa-chart-pie"></i> Business Intelligence & Data</h3>
                     <ul>
@@ -90,6 +116,17 @@
                         <li><i class="fas fa-check"></i> Modelado dimensional (Kimball / Estrella)</li>
                     </ul>
                 </div>
+                <!-- Tarjeta 3: NUEVA TARJETA DE AUTOMATIZACIONES -->
+                <div class="card">
+                    <h3><i class="fas fa-robot"></i> Automatización & Power Platform</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Power Apps (Apps de lienzo y modelos)</li>
+                        <li><i class="fas fa-check"></i> Power Automate (Flujos de trabajo)</li>
+                        <li><i class="fas fa-check"></i> Optimización y digitalización de procesos</li>
+                        <li><i class="fas fa-check"></i> Integración de datos con SharePoint/Dataverse</li>
+                    </ul>
+                </div>
+                <!-- Tarjeta 4 -->
                 <div class="card">
                     <h3><i class="fas fa-tools"></i> Herramientas & Metodologías</h3>
                     <ul>
@@ -102,8 +139,9 @@
             </div>
         </section>
 
+        <!-- SECCIÓN PROYECTOS -->
         <section id="proyectos">
-            <h2 class="section-title"><i class="fas fa-folder-open" style="color: #f59e0b;"></i> Portafolio de Proyectos</h2>
+            <h2 class="section-title"><i class="fas fa-folder-open" style="color: #38bdf8;"></i> Portafolio de Proyectos</h2>
             <p class="section-subtitle">Casos donde combiné el entendimiento del negocio con la implementación en Power BI.</p>
 
             <div class="project-card">
@@ -122,9 +160,35 @@
                 </div>
             </div>
         </section>
+
+        <!-- SECCIÓN CONTACTO COMPLETA -->
+        <section id="contacto">
+            <h2 class="section-title"><i class="fas fa-paper-plane" style="color: #38bdf8;"></i> Contacto</h2>
+            <p class="section-subtitle">¿Tienes un proyecto en mente o buscas un analista de datos y requerimientos? ¡Escríbeme!</p>
+
+            <div class="contact-grid">
+                <a href="https://wa.me/573194152818" target="_blank" class="contact-card">
+                    <i class="fab fa-whatsapp"></i>
+                    <h4>WhatsApp / Teléfono</h4>
+                    <p>+57 319 415 2818</p>
+                </a>
+
+                <a href="mailto:maussa.j09@gmail.com" class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h4>Correo Electrónico</h4>
+                    <p>maussa.j09@gmail.com</p>
+                </a>
+
+                <a href="https://www.linkedin.com/in/maussaj/" target="_blank" class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h4>LinkedIn</h4>
+                    <p>in/maussaj</p>
+                </a>
+            </div>
+        </section>
     </div>
 
-    <footer id="contacto">
+    <footer>
         <p>© 2026 - Portafolio de Analytics & Business Intelligence</p>
     </footer>
 
